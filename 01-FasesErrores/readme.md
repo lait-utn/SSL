@@ -84,7 +84,8 @@ El archivo preprocesado hello4.i se pudo compilar pero el compilador dio adverte
 hello4.c:4:9: warning: format ‘%d’ expects a matching ‘int’ argument [-Wformat=]   
   printf("La respuesta es %d\n");   
          ^~~~~~~~~~~~~~~~~~~~~~    
-8. El archivo .s posee la traducción del codigo compilado a Assembly, cuenta con varias optimizaciones propias del compilador de GCC, pero la estructura basica del programa es la misma, hace espacio para las variables en la pila, asigna el valor 42 a un punto en la pila, le asigna el valor del string escrito en printf a edi y deja un call printf para ser remplazado por el linker, libera la pila y retorna el control al sistema operativo    
+8. El archivo .s posee la traducción del codigo compilado a Assembly, cuenta con varias optimizaciones propias del compilador de GCC, pero la estructura basica del programa es la misma, hace espacio para las variables en la pila, asigna el valor 42 a un punto en la pila, le asigna el valor del string escrito en printf a edi y deja un call printf para ser remplazado por el linker, libera la pila y retorna el control al sistema operativo.   
+
 9.``` $ as hello4.s -o hello4.o ```   
 se ensambla el archivo hello4.s y se traduce a instrucciones de codigo maquina, creando un archivo hello4.o   
 10.``` $ gcc hello4.o -o hello4 ```   
