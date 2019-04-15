@@ -67,9 +67,8 @@ El programa ejemplo debe enviar por stdout la frase La respuesta es 42, elvalor 
 4) Al analizar la primera linea de hello3.c, semanticamente la linea es correcta, está declarando la función printf como int, ya que está función retorna el numero de caracteres impresos, o un valor negativo si ocurre un error
 > cpp hello3.c > hello3.i   
 5) Se observa que hello3.i no posee todas las declaraciones de la libreria stdio y varios #define que hello2.i si posee   
-6)   
-> gcc -S hello3.i    
-La compilacion fallo y se produjo un error:    
+6)   > gcc -S hello3.i    
+>La compilacion fallo y se produjo un error:    
 hello3.c: In function ‘main’:    
 hello3.c:4:2: warning: implicit declaration of function ‘prontf’; did you mean ‘printf’? [-Wimplicit-function-declaration]
   prontf("La respuesta es %d\n");    
@@ -77,19 +76,16 @@ hello3.c:4:2: warning: implicit declaration of function ‘prontf’; did you me
   printf    
 hello3.c:4:2: error: expected declaration or statement at end of input    
     
-7)    
->cpp hello4.c > hello4.i    
->gcc -S hello4.i    
-El archivo preprocesado hello4.i se pudo compilar pero el compilador dio advertencia.    
+7) >cpp hello4.c > hello4.i    
+   >gcc -S hello4.i    
+>El archivo preprocesado hello4.i se pudo compilar pero el compilador dio advertencia.    
 hello4.c: In function ‘main’:    
 hello4.c:4:9: warning: format ‘%d’ expects a matching ‘int’ argument [-Wformat=]   
   printf("La respuesta es %d\n");   
          ^~~~~~~~~~~~~~~~~~~~~~    
 8) El archivo s posee la traducción del codigo compilado a Assembly, cuenta con varias optimizaciones propias del compilador de GCC, pero la estructura basica del programa es la misma, hace espacio para las variables en la pila, asigna el valor 42 a un punto en la pila, le asigna el valor del string escrito en printf a edi y deja un call printf para ser remplazado por el linker, libera la pila y retorna el control al sistema operativo    
-9)    
-> as hello4.s -o hello4.o    
+9)> as hello4.s -o hello4.o    
 se ensambla el archivo hello4.s y se traduce a instrucciones de codigo maquina, creando un archivo hello4.o    
-    
 10) > gcc hello4.o -o hello4    
 Crea el archivo ejecutable a partir del archivo objeto    
 11) > gcc hello5.c    
