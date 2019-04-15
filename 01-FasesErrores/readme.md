@@ -12,7 +12,7 @@ Identificar las fases de traducción y errores.
 •  Ensamblado.   
 •  Vinculación (Link).   
 •  Errores en cada fase.   
-4.3. Tareas
+4.3. Tareas     
 1.Investigar  las  funcionalidades  y  opciones  que  su  compilador  presenta  paralimitar el inicio y fin de las fases de traducción.   
 2.Para la siguiente secuencia de pasos:   
 a.Transicribir en readme.md cada comando ejecutado y   
