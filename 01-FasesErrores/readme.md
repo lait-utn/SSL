@@ -84,9 +84,11 @@ La vinculación falla, ya que no encuentra una referencia a prontf en la bibliot
 hello4.c:(.text+0x1c): undefined reference to `prontf'   
 collect2: error: ld returned 1 exit status   
 11.``` $ gcc hello5.c -o hello5 ```   
-12. "La respuesta es -2126074760", al no tener definido un valor al que apuntar, imprime lo que haya en la memoria en la direccion donde se hace el call   
+12. "La respuesta es -2126074760", al no tener definido un valor al que apuntar, imprime lo que haya en la memoria en la direccion donde se hace el call.   
+
 13.``` $ gcc hello6.c -o hello6 ```   
 "La respuesta es 42"   
+
 14.``` $ gcc hello7.c -o hello7 ```   
 15. La variante 7 funciona porque el lenguaje C no requiere declaraciones explicitas a funciones para compilar y acepta declaraciones implicitas y como el llamado a printf es correcto entonces el archivo no da error en tiempo de ejecución.  
 
