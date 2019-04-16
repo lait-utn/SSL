@@ -70,12 +70,7 @@ El programa ejemplo debe enviar por stdout la frase La respuesta es 42, elvalor 
 Se observa que hello3.i no posee todas las declaraciones de la libreria stdio y varios #define que hello2.i si posee   
 6. ``` $ gcc -S hello3.i    ```   
 La compilacion fallo y se produjo un error:    
->hello3.c: In function ‘main’:    
-hello3.c:4:2: warning: implicit declaration of function ‘prontf’; did you mean ‘printf’? [-Wimplicit-function-declaration]
-  prontf("La respuesta es %d\n");    
-  ^~~~~~    
-  printf    
-hello3.c:4:2: error: expected declaration or statement at end of input    
+>hello3.c:4:2: error: expected declaration or statement at end of input    
     
 7. ``` $ cpp hello4.c > hello4.i```   
    ``` $ gcc -S hello4.i```    
