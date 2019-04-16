@@ -74,7 +74,7 @@ La compilacion fallo y se produjo un error:
     
 7. ``` $ cpp hello4.c > hello4.i```   
    ``` $ gcc -S hello4.i```    
-8. El archivo .s posee la traducción del codigo compilado a Assembly, cuenta con varias optimizaciones propias del compilador de GCC, pero la estructura basica del programa es la misma, hace espacio para las variables en la pila, asigna el valor 42 a un punto en la pila, le asigna el valor del string escrito en printf a edi y deja un call prontf para ser remplazado por el linker, libera la pila y retorna el control al sistema operativo.   
+8. El archivo .s posee la traducción del codigo compilado a Assembly, cuenta con varias optimizaciones propias del compilador de GCC, pero la estructura basica del programa es la misma, hace espacio para las variables en la pila, asigna el valor 42 a un punto en la pila, le asigna el valor del string escrito en prontf a edi y deja un call prontf para ser remplazado por el linker, libera la pila y retorna el control al sistema operativo.   
 
 9.``` $ as hello4.s -o hello4.o ```   
 se ensambla el archivo hello4.s y se traduce a instrucciones de codigo maquina, creando un archivo hello4.o   
