@@ -79,25 +79,19 @@ hello3.c:4:2: error: expected declaration or statement at end of input
     
 7. ``` $ cpp hello4.c > hello4.i```   
    ``` $ gcc -S hello4.i```    
-El archivo preprocesado hello4.i se pudo compilar pero el compilador dio advertencia.    
->hello4.c: In function ‘main’:    
-hello4.c:4:9: warning: format ‘%d’ expects a matching ‘int’ argument [-Wformat=]   
-  printf("La respuesta es %d\n");   
-         ^~~~~~~~~~~~~~~~~~~~~~    
-8. El archivo .s posee la traducción del codigo compilado a Assembly, cuenta con varias optimizaciones propias del compilador de GCC, pero la estructura basica del programa es la misma, hace espacio para las variables en la pila, asigna el valor 42 a un punto en la pila, le asigna el valor del string escrito en printf a edi y deja un call printf para ser remplazado por el linker, libera la pila y retorna el control al sistema operativo.   
+8. El archivo .s posee la traducción del codigo compilado a Assembly, cuenta con varias optimizaciones propias del compilador de GCC, pero la estructura basica del programa es la misma, hace espacio para las variables en la pila, asigna el valor 42 a un punto en la pila, le asigna el valor del string escrito en printf a edi y deja un call prontf para ser remplazado por el linker, libera la pila y retorna el control al sistema operativo.   
 
 9.``` $ as hello4.s -o hello4.o ```   
 se ensambla el archivo hello4.s y se traduce a instrucciones de codigo maquina, creando un archivo hello4.o   
 10.``` $ gcc hello4.o -o hello4 ```   
-Crea el archivo ejecutable a partir del archivo objeto     
-11.``` $ gcc hello5.c ```   
-12. "La respuesta es 42"   
+La vinculación falla, ya que no encuentra una referencia a prontf en la biblioteca estandar:
+hello4.o: In function `main':
+hello4.c:(.text+0x1c): undefined reference to `prontf'
+collect2: error: ld returned 1 exit status
+11.``` $ gcc hello5.c -o hello5 ```   
+12. "La respuesta es -2126074760", al no tener definido un valor al que apuntar, imprime lo que haya en la memoria en la direccion donde se hace el call   
 13.``` $ gcc hello6.c -o hello6 ```   
+"La respuesta es 42"   
 14.``` $ gcc hello7.c -o hello7 ```   
-15. La variante 7 no funciona:   
->hello7.c: In function ‘main’:   
-hello7.c:3:1: warning: implicit declaration of function ‘printf’ [-Wimplicit-function-declaration]    
- printf("La respuesta es %d\n", i);    
- ^~~~~~    
-hello7.c:3:1: warning: incompatible implicit declaration of built-in function ‘printf’    
-hello7.c:3:1: note: include ‘<stdio.h>’ or provide a declaration of ‘printf’    
+15. La variante 7 funciona porque el lenguaje C no requiere declaraciones explicitas a funciones para compilar y acepta declaraciones implicitas y como el llamado a printf es correcto entonces el archivo no da error en tiempo de ejecución.  
+
