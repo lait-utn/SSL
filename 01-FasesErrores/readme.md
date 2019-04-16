@@ -79,8 +79,8 @@ La compilacion fallo y se produjo un error:
 9.``` $ as hello4.s -o hello4.o ```   
 se ensambla el archivo hello4.s y se traduce a instrucciones de codigo maquina, creando un archivo hello4.o   
 10.``` $ gcc hello4.o -o hello4 ```   
->La vinculación falla, ya que no encuentra una referencia a prontf en la biblioteca estandar:   
-hello4.o: In function `main':   
+La vinculación falla, ya que no encuentra una referencia a prontf en la biblioteca estandar:   
+>hello4.o: In function `main':   
 hello4.c:(.text+0x1c): undefined reference to `prontf'   
 collect2: error: ld returned 1 exit status   
 11.``` $ gcc hello5.c -o hello5 ```   
