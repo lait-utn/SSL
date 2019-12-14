@@ -11,7 +11,7 @@ Las variables de la calculadora no requieren ser creadas, instanciadas o inicial
 
 Cada instrucción se finaliza con un Enter (\n).
 
-Adicional: la calculadora admite parentesis: `A+(B*C)`, `(((A)))`, `(A+(B*C))`, etc.
+Adicional: la calculadora admite parentesis de forma opcional: `A+(B*C)`, `(((A)))`, `(A+(B*C))`, etc.
 
 ![](https://raw.githubusercontent.com/lait-utn/SSL/master/12-CalculadoraVariables/image.png)
 
