@@ -13,7 +13,7 @@ Cada instrucción se finaliza con un Enter (\n).
 
 Adicional: la calculadora admite parentesis: `A+(B*C)`, `(((A)))`, `(A+(B*C))`, etc.
 
-![](https://raw.githubusercontent.com/lait-utn/stuff/master/12-CalculadoraVariables/image.png?token=ALXBCDYI56RDIEGTJSJEKNK56RNI6)
+![](https://raw.githubusercontent.com/lait-utn/SSL/master/12-CalculadoraVariables/image.png)
 
 #### Instrucciones que acepta la calculadora:
 
